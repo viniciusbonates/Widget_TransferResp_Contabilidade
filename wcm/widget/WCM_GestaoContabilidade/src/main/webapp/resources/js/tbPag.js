@@ -104,7 +104,9 @@ async function tableBuild(tableIn){
                 'PC - Recebe e Analisa': 1,
                 'Analisa e Cadastra no RM': 1,
                 'Efetua Pagamento': 1,
-                'Baixa no Pagamento': 1
+                'Baixa no Pagamento': 1,
+                'UCOF - PC Ressarcimento': 1,
+                'UCOF - PC Adiantamento': 1
             }
             stateN = objCkStateUCOF[recordNow['stateName']]
             if(stateN != undefined){
