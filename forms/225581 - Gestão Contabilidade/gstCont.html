@@ -1,0 +1,244 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	<style type="text/css">
+		.Obrigatorio {
+			color: red;
+		}
+	</style>
+
+</head>
+
+<body>
+	
+	<div class="modal modal-lg fade show" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Opções de Transferência</h1>
+			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-4">
+						<input type="number" class="form-control" placeholder="Número da solicitação" aria-label="initSolict" min="0" max="900000" maxlength="6" id="initSolict">
+					</div>
+					<div class="col-md-4">
+						<input type="number" class="form-control" placeholder="Número da solicitação" aria-label="initSolict" min="0" max="900000" maxlength="6" id="initSolict">
+					</div>
+				</div>
+				<table class="table" id="tbSelecteds">
+					<thead>
+					  <tr>
+						<th scope="col">N°Solicitação</th>
+						<th scope="col">Responsável Atual</th>
+						<th scope="col">Status</th>
+						<th scope="col">#</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" class="bi bi-file-check-fill" viewBox="0 0 16 16">
+								<path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2m-1.146 6.854-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708.708"/>
+							</svg>
+						</td>
+					  </tr>
+					  <tr>
+						<th scope="row">2</th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>
+							<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-file-excel-fill" viewBox="0 0 16 16">
+								<path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M5.884 4.68 8 7.219l2.116-2.54a.5.5 0 1 1 .768.641L8.651 8l2.233 2.68a.5.5 0 0 1-.768.64L8 8.781l-2.116 2.54a.5.5 0 0 1-.768-.641L7.349 8 5.116 5.32a.5.5 0 1 1 .768-.64"/>
+							  </svg>
+						</td>
+					  </tr>
+					  <tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					  </tr>
+					  <tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					  </tr>
+					  <tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					  </tr>
+					  <tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					  </tr>
+					  <tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					  </tr>
+					  <tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					  </tr>
+					  <tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					  </tr>
+					  <tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					  </tr>
+					</tbody>
+				  </table>
+				  <div class="row">
+						<div class="col-md-4" style="color: green;"><b>Transferidas com sucesso</b></div><div class="col-md-2"><b>5</b></div>
+				  </div>
+				  <div class="row">
+					<div class="col-md-4" style="color: red;"><b>Falhas</b></div><div class="col-md-2"><b>5</b></div>
+			  </div>
+			</div>
+			<div class="modal-footer">
+			  <button class="btn btn-primary" data-bs-dismiss="modal">Finalizar</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+
+		
+	  <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>
+
+	<div class="fluig-style-guide">
+		
+	<form name="form" role="form">
+
+		<div class="text-center">
+            <div class="row align-items-start border border-primary rounded-1">
+                <div class="col bg-primary text-white border-5 p-2 border-primary">
+                    <h3>Transferência de Responsabilidade</h3>
+                </div>
+                <div class="bd-example m-0 border-0 p-2">
+                    <div class="alert alert-info p-1" role="alert">
+                        <h5>Este painel somente apresenta solicitações com 'Status' igual a 'Aberto'.</h5>
+                    </div>
+                </div>
+                <form class="row g-3">
+                    <div class="col-7">
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text">A partir da solicitação: </span>
+                            <input type="number" class="form-control" placeholder="Número da solicitação" aria-label="initSolict" min="0" max="900000" maxlength="6" id="initSolict">
+                            <span class="input-group-text">Até: </span>
+                            <input type="number" class="form-control" placeholder="Número da solicitação" aria-label="finalSolict" min="0" max="900000" maxlength="6" id="finalSolict">
+                       </div>    
+                    </div>
+                    <div class="col-7">
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text">A partir desta data: </span>
+                            <input type="date" class="form-control" aria-label="initSolict" maxlength="6" id="initDate" data-gtm-form-interact-field-id="1">
+                            <span class="input-group-text">Até: </span>
+                            <input type="date" class="form-control" aria-label="finalSolict" maxlength="4" id="finalDate" data-gtm-form-interact-field-id="0">
+                       </div>    
+                    </div>
+                </form>
+                <div class="col-md-3 p-4">
+                    <button class="btn btn-primary" type="submit" id="getData">Buscar</button>
+                </div>
+
+                <table class="order-table table" id="tbPag" style="width:100%"></table>
+				
+            </div>
+        </div>
+
+<script>
+	function addUser() {
+		wdkAddChild("rowDefin");
+	}
+
+	function fnCustomDelete(elem) {
+		fnWdkRemoveChild(elem);
+	}
+		/*function validateboleto(){
+		var urlInd = "https://myweb.am.sebrae.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID="
+		var urlSec = "&app_ecm_workflowview_taskUserId="
+		var x = 0
+		var arrayNumSol = []
+		var matricula = getValue("WKUser");
+		//errorMsg += matricula + endofline;
+		var c = DatasetFactory.createConstraint("cmb_NomeSolicita", matricula, matricula, ConstraintType.MUST);
+		var constraint = new Array(c);
+		var dataset = DatasetFactory.getDataset("BolTaxi2", null, constraint, null);
+		for(i = 0; i<dataset.rowsCount; i++){
+			var Nsol = dataset.getValue(i, "txt_NumProcess");
+			//errorMsg += "*"+dataset.rowsCount + endofline;
+			if(Nsol != null || Nsol != ""){
+				var c3 = DatasetFactory.createConstraint("processInstanceId", Nsol, Nsol, ConstraintType.MUST);
+				var constraints = new Array(c3);
+				var ddataset = DatasetFactory.getDataset("processTask", null, constraints, null);
+				//errorMsg += "."+ddataset + endofline;
+				for(j = 0; j < ddataset.rowsCount; j++){
+					//errorMsg += "."+x+matricula + endofline;
+					var status = ddataset.getValue(j, "status");
+					var colleague = ddataset.getValue(j, "processTaskPK.colleagueId"); 
+					if(status == 0 && colleague == matricula){
+						arrayNumSol.push(ddataset.getValue(j, "processTaskPK.processInstanceId")) 
+						//errorMsg += matricula+ '  '+a + endofline;
+						x++
+					}
+				}
+			}
+		}
+		if(x != 0) { errorMsg = ''; 
+		errorMsg += "<h2 style=\"color:black\">Existe uma ou mais solicitações de boleto em sua responsabilidade que não estão finalizadas. As seguintes solicitações:</h2>" + endofline; 
+		//errorMsg += "<h2 style=\"color:black\">As seguintes solicitações:</h2>" + endofline;
+		var arraySec = [1]
+			for(i = 0; i < arrayNumSol.length; i++){
+				x = 0
+				for(j = 0; j < arraySec.length; j++){
+					if(arrayNumSol[i] == arraySec[j]){
+					x++
+						//arraySec.push(arrayNumSol[i])
+					}	
+				}
+				if(x == 0){
+					if(arraySec[0] == 1){
+						arraySec[0] = arrayNumSol[i]
+					}else{
+						arraySec.push(arrayNumSol[i])
+					}
+				}
+			}
+			for(k = 0; k < arraySec.length; k++){
+				//errorMsg += "<h2 style=\"color:black\">"+arrayNumSol[i]+"</h2>" + endofline;
+				errorMsg += "<h2>"+"<a href=\""+ urlInd + arraySec[k] + urlSec + matricula +"\""+ "class=\"cad-link\""+"target=\"_blank\""+"style=\"color:blue\">"+"<i class=\"flaticon flaticon-link icon-md\"></i>"+
+				arrayNumSol[k]+"</a>" +"</h2>"+ endofline; 
+			}
+			//<a href="LISTA DE INSCRITOS NA ETAPA DE PRÉ-SELEÇÃO - MESTRADO FGV.pdf" class="cad-link" target="_blank" style="color:blue"><i class="flaticon flaticon-link icon-sm"></i>Click aqui para baixar</a>
+			} //https://myweb.am.sebrae.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=24878&app_ecm_workflowview_taskUserId=00000514
+		}
+*/
+</script>
+	</form>
+	</div>
+
+</body>
+</html>
