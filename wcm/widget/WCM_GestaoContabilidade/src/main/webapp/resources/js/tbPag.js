@@ -3,6 +3,9 @@
 }
 window.addEventListener('load', objItensTbUser)
 */
+function removeFooter(){
+    document.getElementById('wcm_footer').outerHTML = ''
+}window.addEventListener('load', removeFooter)
 function iniTbPag(){
     tablePag = {}
     tablePag['selecteds'] = []
@@ -98,7 +101,10 @@ async function tableBuild(tableIn){
                 'UCOF - Agendamento': 1,
                 'UCOF - Geração de  Remessa - Financeiro': 1,
                 'UCOF - Pagamento programado conforme vencimento': 1,
-                'Contratos Contínuos': 1
+                'PC - Recebe e Analisa': 1,
+                'Analisa e Cadastra no RM': 1,
+                'Efetua Pagamento': 1,
+                'Baixa no Pagamento': 1
             }
             stateN = objCkStateUCOF[recordNow['stateName']]
             if(stateN != undefined){
