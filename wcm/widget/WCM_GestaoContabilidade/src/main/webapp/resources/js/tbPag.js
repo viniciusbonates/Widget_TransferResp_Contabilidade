@@ -63,23 +63,31 @@ async function tableBuild(tableIn){
         dataIn = []
         for(r = 0; r < records.length; r++){
             recordNow = records[r];
+            objPagamentoPara = {};
             // Configuração de campo slc_PagamentoPara -------------->
-            objPagamentoPara = {
-                '0': 'Selecione',
-                '1': 'Consultoria',
-                '2': 'Instrutoria',
-                '3': 'Convênios',
-                '4': 'Adiantamentos',
-                '5': 'Diárias',
-                '6': 'Passagens',
-                '7': 'Ressarcimentos',
-                '8': 'Materiais diversos',
-                '9': 'Serviços Diversos',
-                '10': 'Despesas Administrativas',
-                '11': 'Diversos',
-                '12': 'Taxas, Impostos e Contribuições',
+            if(recordNow['processId'] == "Pedido_de_Pagamento"){
+                objPagamentoPara = {
+                    '0': 'Selecione',
+                    '1': 'Consultoria',
+                    '2': 'Instrutoria',
+                    '3': 'Convênios',
+                    '4': 'Adiantamentos',
+                    '5': 'Diárias',
+                    '6': 'Passagens',
+                    '7': 'Ressarcimentos',
+                    '8': 'Materiais diversos',
+                    '9': 'Serviços Diversos',
+                    '10': 'Despesas Administrativas',
+                    '11': 'Diversos',
+                    '12': 'Taxas, Impostos e Contribuições',
+                }
+            }else if(recordNow['processId'] == "AdiantamentoRessarcimento"){
+                objPagamentoPara = {
+                    '0': 'Selecione',
+                    '1': 'Adiantamentos',
+                    '2': 'Ressarcimentos',
+                }
             }
-            
             slcPgPara = objPagamentoPara[recordNow['slc_PagamentoPara']];
             // Configuração de campo slc_PagamentoPara -------------->
             // Obtendo STATUS da SOLICITACAO =  0 - Aberto, 1 - Cancelado e 2 - Finalizado-------------->
