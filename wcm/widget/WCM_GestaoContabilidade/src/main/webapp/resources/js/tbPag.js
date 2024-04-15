@@ -128,6 +128,7 @@ async function tableBuild(tableIn){
             link = '<a href=\"'+url+'\" class=\"cad-link\" target=\"_blank\" style=\"color:blue\" ml=\"true\">'+recordNow['processInstanceId']+'</a>';
             dataIn.push([
                 recordNow['dt_dataSolicita'],
+                recordNow['processId'],
                 link,
                 recordNow['stateName'],
                 userNresp,
@@ -147,6 +148,7 @@ async function tableBuild(tableIn){
             data: dataInN,
             columns: [
                 { title: 'Data de Inseção Solicitação' },
+                { title: 'Tipo Pedido' },
                 { title: 'Número Processo' },
                 { title: 'Etapa Atual' },
                 { title: 'Responsável Atual' },

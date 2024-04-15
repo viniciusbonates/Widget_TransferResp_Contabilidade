@@ -233,9 +233,9 @@ function initPainelTrasnfer(){
         itnsSlcTb = tablePag['selecteds'];
         for(slcI = 0; slcI < itnsSlcTb.length; slcI++){
             objThis = {}
-            objThis.nSolictItnNow   = itnsSlcTb[slcI].cells[1].textContent;
-            objThis.respItnNow      = itnsSlcTb[slcI].cells[3].textContent; 
-            objThis.nEtapaItnNow    = itnsSlcTb[slcI].cells[2].textContent;
+            objThis.nSolictItnNow   = itnsSlcTb[slcI].cells[2].textContent;
+            objThis.respItnNow      = itnsSlcTb[slcI].cells[4].textContent; 
+            objThis.nEtapaItnNow    = itnsSlcTb[slcI].cells[3].textContent;
             objThis.icon            = 'iconNothing'
             objThis.status          = '---'
             objFormat['itns'].push(objThis)
