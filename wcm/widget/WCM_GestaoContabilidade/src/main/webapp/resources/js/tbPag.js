@@ -5,7 +5,7 @@ window.addEventListener('load', objItensTbUser)
 */
 function removeFooter(){
     document.getElementById('wcm_footer').outerHTML = ''
-}window.addEventListener('load', removeFooter)
+}window.addEventListener('load', removeFooter)  // < ----- em homolog não
 function iniTbPag(){
     tablePag = {}
     tablePag['selecteds'] = []
@@ -166,6 +166,12 @@ async function tableBuild(tableIn){
                 { title: 'Valor Bruto' },
                 { title: 'Status' }
             ],
+            columnDefs: [
+                {
+                    targets: 2,
+                    className: 'dt-body-center'
+                }
+              ]
         });
         $(tableIn).on( 'page.dt', function () {
             objInfoPg = tablePag['table'].page.info();

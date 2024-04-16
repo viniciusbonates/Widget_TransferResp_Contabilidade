@@ -205,7 +205,7 @@ async function processTransfer(){
         btnInitTransfer.appendChild(spanBtn);
         /*******************************/
         for(slcIn = 0; slcIn < itnsSlcTb.length; slcIn++){
-            nSolictItnNow   = itnsSlcTb[slcIn].cells[1].textContent;
+            nSolictItnNow   = itnsSlcTb[slcIn].cells[2].textContent;
             console.log(nSolictItnNow)
             /********************************************************* */
 
