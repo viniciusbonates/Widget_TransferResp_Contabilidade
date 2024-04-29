@@ -79,6 +79,7 @@ async function getRequestProcess (n) {
         var assignee            = valueNow.assignee.code;
         var targetState         = '';
         var processId           = valueNow.processId
+        var tipoPedido             = ''
         /*var movementSequence    = value.items[value.items.length - 1].movementSequence;
         var stateNow            = value.items[value.items.length - 1].state.sequence;
         var chkStatus           = value.items[value.items.length - 1].status;
@@ -115,6 +116,17 @@ async function getRequestProcess (n) {
                     targetState = rspArr[i]
                 }
             }
+            if(stateNow == 19){
+                tipoPedido = tablePag['selecteds'][0].cells[7].textContent;
+               console.log(tipoPedido)
+                let objPagamentoParaInAPI = {
+                    'Adiantamentos': '1',
+                    'Ressarcimentos': '2',
+                }
+                console.log(tipoPedido)
+                tipoPedido = objPagamentoParaInAPI[tipoPedido]
+                frm['slc_PagamentoPara'] = 0    
+            }
         }
         async function execq(){
             console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
@@ -125,6 +137,10 @@ async function getRequestProcess (n) {
                         targetState         = stateNow;
                         movementSequence++;
                         assignee            = respN;
+                        if(targetState == 19 && processId == 'AdiantamentoRessarcimento'){
+                            console.log(tipoPedido)
+                            frm['slc_PagamentoPara'] = tipoPedido
+                       }    
                     }
                     if(stateNow == 19 && processId == 'Pedido_de_Pagamento'){
                         tdhj = new Date().toJSON();
