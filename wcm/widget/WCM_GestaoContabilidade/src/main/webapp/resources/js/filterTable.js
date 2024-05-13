@@ -49,7 +49,8 @@ function filterTable(){
     btnGetData = document.getElementById('getData');
     console.log(btnGetData)
     btnGetData.onclick = function () {
-        objDataPainel['myLoading'].show();
+        loadW = FLUIGC.loading('.super-widget');
+        loadW.show()
         tablePag['selecteds'] = []
         initSolict  = document.getElementById('initSolict')
         finalSolict = document.getElementById('finalSolict')
@@ -86,7 +87,7 @@ function filterTable(){
                 tablePag['lastRecord']  = recordsTest[recordsTest.length - 1]['processInstanceId'];
             } 
         } 
-        objDataPainel['myLoading'].hide()
+        loadW.hide()
     }
 }
 window.addEventListener('load', filterTable)

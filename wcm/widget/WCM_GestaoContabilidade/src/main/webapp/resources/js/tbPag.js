@@ -234,4 +234,30 @@ async function tableBuild(tableIn){
             }
         });*/
     });
+    getProcessRealTime()
+}
+
+function getProcessRealTime(){
+    myToast = function (tp, title) {
+        FLUIGC.toast({
+            title: title,   //'Ação realizada com sucesso!',
+            message: '',
+            type: tp        //success, danger, info and warning.
+            });
+    }
+    setInterval(function () { 
+        lastRecord = tablePag['lastRecord']
+        //console.log(lastRecord)
+        lastRecord += 1
+        //console.log(lastRecord)
+        records = tablePag.dsRecordsPags(lastRecord, 90000000);
+        if(records.length != 0){
+            recordsN = tablePag.addRowsTable(records)
+            for(y = 0; y < recordsN.length; y++){
+                tablePag.table.row.add(recordsN[y]).draw(false); 
+            }   
+            tablePag['lastRecord']  = records[records.length - 1]['processInstanceId'];
+            myToast('success', 'Uma nova solicitação chegou!');
+        }
+    }, 2000);
 }
