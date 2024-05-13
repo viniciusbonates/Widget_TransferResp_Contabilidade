@@ -3,6 +3,8 @@ function setobjFields(){
     finalSolict = document.getElementById('finalSolict')
     initDate    = document.getElementById('initDate')
     finalDate   = document.getElementById('finalDate')
+    initSolict.value    = 0;
+    finalSolict.value   = 999999;
     objFields = {
         fieldsFilter:     [initSolict, finalSolict, initDate, finalDate]
     }

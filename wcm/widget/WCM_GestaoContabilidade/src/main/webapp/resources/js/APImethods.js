@@ -118,7 +118,7 @@ async function getRequestProcess (n) {
             }
             if(stateNow == 19){
                 tipoPedido = tablePag['selecteds'][0].cells[7].textContent;
-               console.log(tipoPedido)
+                console.log(tipoPedido)
                 let objPagamentoParaInAPI = {
                     'Adiantamentos': '1',
                     'Ressarcimentos': '2',
@@ -129,8 +129,6 @@ async function getRequestProcess (n) {
             }
         }
         async function execq(){
-            console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-            console.log(assignee.indexOf('Pool'))
             if(assignee.indexOf('Pool') == -1 && assignee.indexOf('Group') == -1){
                 for(execT = 0; execT < 2; execT++){
                     if(execT == 1){
