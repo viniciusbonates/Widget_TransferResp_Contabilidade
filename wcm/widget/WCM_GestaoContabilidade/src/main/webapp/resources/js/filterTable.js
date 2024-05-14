@@ -74,10 +74,10 @@ function filterTable(){
                 let arrDefnow =  [initDate, finalDate]
                 objFields.setValidfeedback(arrDefnow)
                 recordsTest = tablePag.dsRecordsPags(initSolict.value, finalSolict.value, initDate.value, finalDate.value);
-            }else{
+            }/*else{
                 let arrDefnow =  [initDate, finalDate]
                 objFields.setInvalidfeedback(arrDefnow)
-            }
+            }*/
             tablePag.table.clear().draw()
             if(recordsTest.length != 0){
                 recordsN = tablePag.addRowsTable(recordsTest)

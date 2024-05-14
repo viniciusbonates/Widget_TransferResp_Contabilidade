@@ -12,15 +12,15 @@ function iniTbPag(){
     tablePag['dsRecordsPags'] = function (initNsolictParam, finalNsolictParam, initialStartDate, finalStartDate) {
         let c1 = DatasetFactory.createConstraint("NsolictParam", initNsolictParam, finalNsolictParam, ConstraintType.MUST);
         if(initialStartDate != undefined && initialStartDate != null && initialStartDate != '' && finalStartDate != undefined && finalStartDate != null && finalStartDate != ''){
-            console.log(initialStartDate)
-            console.log(finalStartDate)
+            //console.log(initialStartDate)
+            //console.log(finalStartDate)
             let c2 = DatasetFactory.createConstraint("StartDate", initialStartDate, finalStartDate, ConstraintType.MUST);
             cnst = new Array(c1, c2)
         }else{
             cnst = new Array(c1)
         }
         let dataSet = DatasetFactory.getDataset("dsc_TT", null, cnst, null); // em homolog dsc_Pagamentos - Prod dsc_TT
-        console.log(dataSet)
+        if(dataSet.values.length != 0){ console.log(dataSet) }  
         let records = dataSet.values;
         return records
     }
@@ -259,5 +259,5 @@ function getProcessRealTime(){
             tablePag['lastRecord']  = records[records.length - 1]['processInstanceId'];
             myToast('success', 'Uma nova solicitação chegou!');
         }
-    }, 2000);
+    }, 5000);
 }
