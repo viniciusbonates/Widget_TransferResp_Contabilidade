@@ -107,7 +107,7 @@ async function tableBuild(tableIn){
                 'UCOF - Análise de Documentação': 1,
                 'UCOF - Lançamento no RM': 1,
                 'UCOF - Agendamento': 1,
-                'UCOF - Geração de  Remessa - Financeiro': 1,
+                'UCOF - Geração de  Remessa - Financeiro': 2,
                 'UCOF - Pagamento programado conforme vencimento': 1,
                 'PC - Recebe e Analisa': 1,
                 'Analisa e Cadastra no RM': 1,
@@ -118,7 +118,9 @@ async function tableBuild(tableIn){
             }
             stateN = objCkStateUCOF[recordNow['stateName']]
             if(stateN != undefined){
-                if(userNresp.length == 1){
+                if(stateN == 2){
+                    userNresp = 'Papel responsável por '+recordNow['stateName']
+                }else if(userNresp.length == 1){
                     userNresp = userNresp[0]
                     let cUser = DatasetFactory.createConstraint("colleaguePK.colleagueId", userNresp, userNresp, ConstraintType.MUST);
                     cnstUser = new Array(cUser)
