@@ -19,7 +19,7 @@ function iniTbPag(){
         }else{
             cnst = new Array(c1)
         }
-        let dataSet = DatasetFactory.getDataset("dsc_TT", null, cnst, null); // em homolog dsc_Pagamentos - Prod dsc_TT
+        let dataSet = DatasetFactory.getDataset("dsc_Pagamentos", null, cnst, null); // em homolog dsc_Pagamentos - Prod dsc_TT
         if(dataSet.values.length != 0){ console.log(dataSet) }  
         let records = dataSet.values;
         return records

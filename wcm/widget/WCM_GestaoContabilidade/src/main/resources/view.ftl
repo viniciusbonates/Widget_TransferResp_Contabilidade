@@ -80,8 +80,6 @@
                         <h5>Este painel somente apresenta solicitações com 'Status' igual a 'Aberto'.</h5>
                     </div>
                 </div>
-                <iframe src="http://10.4.4.16:4200/" title="Ang">
-                </iframe>
                 <form class="row g-3">
                     <div class="col-7">
                         <div class="input-group input-group-sm mb-3">
