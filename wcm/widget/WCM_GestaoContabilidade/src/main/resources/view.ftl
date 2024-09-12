@@ -98,10 +98,13 @@
                        </div>    
                     </div>
                 </form>
-                <div class="col-md-3 p-4">
+                <div class="col-md-1 mt-4 mb-4 p-1">
+                    <button class="btn btn-primary" id="initDft">Padrão Inicio</button>
+                </div>
+                <div class="col-md-1 mt-4 mb-4 p-1">
                     <button class="btn btn-primary" type="submit" id="getData">Buscar</button>
                 </div>
-                <div class="col-md-3 p-4">
+                <div class="col-md-2 mt-4 mb-4 p-1">
                     <button class="btn btn-success" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" id="btnPainel" disabled>Abrir Definição de Transferência</button>
                 </div>
                 

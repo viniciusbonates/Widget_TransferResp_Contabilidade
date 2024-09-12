@@ -49,6 +49,7 @@ function filterTable(){
     btnGetData = document.getElementById('getData');
     console.log(btnGetData)
     btnGetData.onclick = function () {
+        clearInterval(myInterv)
         loadW = FLUIGC.loading('.super-widget');
         loadW.show()
         tablePag['selecteds'] = []

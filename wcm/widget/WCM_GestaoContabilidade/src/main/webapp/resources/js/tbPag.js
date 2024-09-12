@@ -237,6 +237,7 @@ async function tableBuild(tableIn){
         });*/
     });
     getProcessRealTime()
+    initConfigPainel()
 }
 
 function getProcessRealTime(){
@@ -247,19 +248,39 @@ function getProcessRealTime(){
             type: tp        //success, danger, info and warning.
             });
     }
-    setInterval(function () { 
-        lastRecord = tablePag['lastRecord']
-        //console.log(lastRecord)
-        lastRecord += 1
-        //console.log(lastRecord)
-        records = tablePag.dsRecordsPags(lastRecord, 90000000);
-        if(records.length != 0){
-            recordsN = tablePag.addRowsTable(records)
+    myInterv = setInterval(getNewSolict, 5000);
+}
+function getNewSolict() { 
+    lastRecord = tablePag['lastRecord']
+    //console.log(lastRecord)
+    lastRecord += 1
+    //console.log(lastRecord)
+    records = tablePag.dsRecordsPags(lastRecord, 90000000);
+    if(records.length != 0){
+        recordsN = tablePag.addRowsTable(records)
+        for(y = 0; y < recordsN.length; y++){
+            tablePag.table.row.add(recordsN[y]).draw(false); 
+        }   
+        tablePag['lastRecord']  = records[records.length - 1]['processInstanceId'];
+        myToast('success', 'Uma nova solicitação chegou!');
+    }
+}
+
+function initConfigPainel(){
+    document.getElementById('initDft').addEventListener('click', function (){ 
+        objFields.cleanValidatefeedback();
+        objFields.cleanFieldsFilter();
+        document.getElementById('btnPainel').disabled = true;
+        tablePag['selecteds'] = []
+        recordsTest = tablePag.dsRecordsPags(0, 90000000);
+        tablePag.table.clear().draw()
+        if(recordsTest.length != 0){
+            recordsN = tablePag.addRowsTable(recordsTest)
             for(y = 0; y < recordsN.length; y++){
                 tablePag.table.row.add(recordsN[y]).draw(false); 
             }   
-            tablePag['lastRecord']  = records[records.length - 1]['processInstanceId'];
-            myToast('success', 'Uma nova solicitação chegou!');
+            tablePag['lastRecord']  = recordsTest[recordsTest.length - 1]['processInstanceId'];
         }
-    }, 5000);
+        myInterv = setInterval(getNewSolict, 5000);
+    })
 }
